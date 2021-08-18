@@ -8,7 +8,7 @@ public class Fruit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 名 前 に 「P l a y e r」 が 含 ま れ る オ ブ ジ ェ ク ト と 当 た っ た ら
-        if (other.name.Contains(" Player "))
+        if (other.name.Contains("Player"))
         {
             // 獲 得 演 出 の オ ブ ジ ェ ク ト を 作 成 す る
             var collected = Instantiate

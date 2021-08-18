@@ -8,7 +8,7 @@ public class Spike : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 名 前 に 「P l a y e r」 が 含 ま れ る オ ブ ジ ェ ク ト と 当 た っ た ら
-        if (other.name.Contains(" Player "))
+        if (other.name.Contains("Player"))
         {
             // プ レ イ ヤ ー の オ ブ ジ ェ ク ト を 削 除 す る
             Destroy(other.gameObject);
