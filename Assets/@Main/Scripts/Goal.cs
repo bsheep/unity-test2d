@@ -6,6 +6,8 @@ public class Goal : MonoBehaviour
 {
     bool m_isGoal;
 
+    public AudioClip m_goalClip;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!m_isGoal)
@@ -19,6 +21,9 @@ public class Goal : MonoBehaviour
 
                 var animator = GetComponent<Animator>();
                 animator.Play("Pressed");
+
+                var audioSource = FindObjectOfType<AudioSource>();
+                audioSource.PlayOneShot(m_goalClip);
             }
         }
     }

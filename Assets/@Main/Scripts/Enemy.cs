@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject m_hitPrefab;
 
+    public AudioClip m_hitClip;
+
     private void Awake()
     {
         m_motor = GetComponent<PlatformerMotor2D>();
@@ -58,6 +60,12 @@ public class Enemy : MonoBehaviour
                 cameraShake.Shake();
 
                 Instantiate(m_hitPrefab, transform.position, Quaternion.identity);
+
+                var audioSource = FindObjectOfType<AudioSource>();
+                audioSource.PlayOneShot(m_hitClip);
+
+                var player = other.GetComponent<Player>();
+                player.IsSkipJumpSE = true;
             }
             else
             {
